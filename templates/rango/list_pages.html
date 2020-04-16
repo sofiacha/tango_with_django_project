@@ -1,0 +1,28 @@
+{% extends 'rango/base_bootstrap.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Pages{% endblock %}
+
+{% block body_block %}
+</br>
+<h1>Pages</h1>
+
+<div class="panel">
+	<div class="panel-heading">
+		<!-- Display search results in an ordered list -->
+		<div class="panel-body">
+			<div class="list-group">
+
+				{% for page in pages_list %}
+				<div class="list-group-item">
+
+						<a class="list-group-item-heading" href="{% url 'goto' %}?page_id={{page.id}}"\>{{ page.title }}</a>
+
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

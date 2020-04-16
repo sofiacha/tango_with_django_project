@@ -1,0 +1,31 @@
+{% extends 'rango/base_bootstrap.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body_block %}
+</br>
+<h1>Categories</h1>
+
+<div class="panel">
+	<div class="panel-heading">
+		<!-- Display search results in an ordered list -->
+		<div class="panel-body">
+			<div class="list-group">
+				{% for cat in categories_list %}
+				<div class="list-group-item">
+
+					<h10 class="list-group-item-heading">
+						<a href="{% url 'show_category' cat.slug %}">{{ cat.name }}</a>
+					</h10>
+
+
+
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
